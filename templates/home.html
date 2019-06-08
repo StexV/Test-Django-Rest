@@ -6,14 +6,6 @@
 		{% if user.is_authenticated %}
 		<span class="main_title">Hi, {{ user.username }}!</span><br>
 		<span class="main_text">It's your main page</span>
-
-{% for post in posts %}
-    <h3>{{ post.author }}</h3>
-    <p>{{ post.title }}</p>
-    <hr>
-{% endfor %}
-
-
 		<div class="b_block">
 			<a href="{% url 'logout' %}">
 				<button type="submit" class="login_btn" style="background:#4679b8;">Logout</button>
