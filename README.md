@@ -1,10 +1,9 @@
-What Done:
+<b>What Done:</b>
 1. Register user
 2. Login user
 3. Check mail in clearbit.com during registration
 4. Check mail in emailhunter.co during registration
 5. Using DB sqlite3
-
 5. REST API
 5.1 Can use CRUD for Post
 
