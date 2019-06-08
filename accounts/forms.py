@@ -7,6 +7,7 @@ import clearbit
 hunter = PyHunter('bdb76854417615a762ba0986754e3eabfd7998eb')
 clearbit.key = "sk_ec043898c30b64120ad73115754e52bd"
 
+
 def check_mail(mail):
     try:
         # status = {'result': 'good'}
