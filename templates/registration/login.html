@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+	<div class="main_block">
+		<div class="login_pic">
+			{% load static %}
+			<img src="{% static 'res/img-01.png' %}" alt="IMG">
+		</div>
+
+		<form method="post">
+			{% csrf_token %}
+			{% for field in form %}
+		    <div class="log_block">
+		        <div class="placeholder_text">{{ field.label_tag }}</div>
+		        {{ field }}
+		        {% if field.help_text %}
+		          <small style="color: grey">{{ field.help_text }}</small>
+		        {% endif %}
+		    </div>
+		    {% endfor %}
+			<div class="errors">{{ form.non_field_errors }}</div>
+			<button class="login_btn" type="submit">Login</button>
+		</form>
+		<div class="back_btn"><a class="txt1" href="/"><- Back</a></div>
+	</div>
+{% endblock %}
+<?php endif; ?>

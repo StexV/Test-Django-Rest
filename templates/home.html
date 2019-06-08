@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+{% block title %}Main Page{% endblock %}
+
+{% block content %}
+	<div class="main_block">
+		{% if user.is_authenticated %}
+		<span class="main_title">Hi, {{ user.username }}!</span><br>
+		<span class="main_text">It's your main page</span>
+
+{% for post in posts %}
+    <h3>{{ post.author }}</h3>
+    <p>{{ post.title }}</p>
+    <hr>
+{% endfor %}
+
+
+		<div class="b_block">
+			<a href="{% url 'logout' %}">
+				<button type="submit" class="login_btn" style="background:#4679b8;">Logout</button>
+			</a>
+		</div>
+
+		{% else %}
+
+		<span class="main_title">You are not authorized!</span>
+
+		<div class="b_block">
+			<a href="{% url 'login' %}" style="margin: 0 10px;">
+				<button type="submit" class="login_btn" style="background: #57b846;">Login</button>
+			</a>
+
+			<a href="{% url 'signup' %}">
+				<button type="submit" class="login_btn" style="background:#4679b8;">Sign Up</button>
+			</a>
+		</div>
+		{% endif %}
+	</div>
+{% endblock %}
+<?php endif; ?>
